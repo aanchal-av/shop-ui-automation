@@ -1,0 +1,13 @@
+{
+  "name": "lets-shop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^14.0.3"
+  },
+  "scripts": {
+    "test": "yarn cypress run",
+    "headedTest": "yarn cypress open"
+  }
+}
