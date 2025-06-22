@@ -15,6 +15,8 @@ module.exports = defineConfig({
   },
   reporter: "cypress-mochawesome-reporter",
   reporterOptions:{
+    reportFilename: 'smoke-suite',
+    reportPageTitle: 'Smoke Test Report',
     saveAllAttempts: true
   }
 });
