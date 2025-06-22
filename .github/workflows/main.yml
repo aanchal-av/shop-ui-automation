@@ -28,10 +28,12 @@ jobs:
         with:
           name: test-results
           path: cypress/reports
-          
+      - name: Show Slack message content
+        run: cat slack-message.txt
+        
       - name: Send Slack Notification
         if: always()
-        uses: rtCamp/action-slack-notify@v2
+        uses: slackapi/slack-github-action@v1.25.0
         with:
           payload-file-path: slack-message.txt
         env:
