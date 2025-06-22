@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^14.0.3"
+    "cypress": "^14.0.3",
+    "cypress-mochawesome-reporter": "^3.8.2"
   },
   "scripts": {
     "test": "yarn cypress run",
