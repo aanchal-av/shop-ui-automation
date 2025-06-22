@@ -7,8 +7,14 @@ module.exports = defineConfig({
   },
   
   e2e: {
+    retries:{
+      runMode: 2,
+      openMode: 0
+    },
+    
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      
 
       require('cypress-mochawesome-reporter/plugin')(on)
     },
