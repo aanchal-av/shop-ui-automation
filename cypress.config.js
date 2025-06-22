@@ -17,6 +17,8 @@ module.exports = defineConfig({
   reporterOptions:{
     reportFilename: 'smoke-suite',
     reportPageTitle: 'Smoke Test Report',
+    json: true,
+    html: true,
     saveAllAttempts: true
   }
 });
