@@ -15,8 +15,10 @@ module.exports = defineConfig({
   },
   reporter: "cypress-mochawesome-reporter",
   reporterOptions:{
-    reportFilename: 'smoke-suite',
+    reportDir: "cypress/reports/mochawesome",
+    reportFilename: 'result',
     reportPageTitle: 'Smoke Test Report',
+    overwrite: false, 
     json: true,
     html: true,
     saveAllAttempts: true
