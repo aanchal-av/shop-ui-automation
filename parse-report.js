@@ -10,6 +10,7 @@ if (!fs.existsSync(reportPath)) {
 const data = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 
 const stats = data.stats;
+console.log("Stats found:", stats);
 
 const message = `
 🧪 *Cypress Test Summary*
