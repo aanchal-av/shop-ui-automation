@@ -22,12 +22,9 @@ jobs:
       - name: Run Cypress Tests
         run: yarn test
 
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: cypress/reports
+      - name: Parse test report and generate Slack message
+        run: node parse-report.js
+
       - name: Show Slack message content
         run: cat slack-message.txt
         
@@ -42,4 +39,4 @@ jobs:
           SLACK_ICON_EMOJI: ':rocket:'
           SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
           SLACK_MESSAGE: >
-            CI Job *${{ job.status }}* for `${{ github.repositor }}` on `${{ github.ref_name }}`.
+            CI Job *${{ job.status }}* for `${{ github.repository }}` on `${{ github.ref_name }}`.

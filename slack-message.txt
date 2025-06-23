@@ -1,0 +1,6 @@
+/🧪 *Cypress Test Summary*
+✅ Passed: 3
+❌ Failed: 0
+⏸️ Pending: 0
+🚫 Skipped: 0
+🔢 Total Tests: 3

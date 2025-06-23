@@ -344,6 +344,11 @@ cross-spawn@^7.0.0:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+cypress-ctrf-json-reporter@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/cypress-ctrf-json-reporter/-/cypress-ctrf-json-reporter-0.0.12.tgz#961b6e54e541a87c4e53de99739963351521db43"
+  integrity sha512-CkHZ80fZz2d5wrqU5GdaHbhhi+EL6Sl9pVMi2xLiiQv9lkXG5TxhOpke/2pZ76WSx8l4NaRBF9zfEL6n/0QpGw==
+
 cypress-mochawesome-reporter@^3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/cypress-mochawesome-reporter/-/cypress-mochawesome-reporter-3.8.2.tgz#44a5e640916ac9686b0cb0d6882b2d4baa33729d"

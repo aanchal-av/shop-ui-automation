@@ -1,24 +1,31 @@
 const fs = require("fs");
+const path = require("path");
 
-const reportPath = "cypress/reports/mochawesome/result.json";
-
-if (!fs.existsSync(reportPath)) {
-  console.error("No result.json found.");
-  process.exit(1);
-}
-
+const resultsDir = "cypress/results";
+const files = fs.readdirSync(resultsDir);
+const resultFile = files.find(file => /^result-.*\.json$/.test(file));
+if (!resultFile) {
+    console.error("❌ No result-*.json file found.");
+    process.exit(1);
+  }
+  const reportPath = path.join(resultsDir, resultFile);
 const data = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+console.log(data);
 
-const stats = data.stats;
-console.log("Stats found:", stats);
+const summary = data?.results?.summary;
+
+// const stats = data.stats;
+// console.log("Stats found:", stats);
 
 const message = `
-🧪 *Cypress Test Summary*
-✅ Passed: ${stats.passes}
-❌ Failed: ${stats.failures}
-⏸️ Pending: ${stats.pending}
-⏱ Duration: ${stats.duration}ms
+/🧪 *Cypress Test Summary*
+✅ Passed: ${summary.passed}
+❌ Failed: ${summary.failed}
+⏸️ Pending: ${summary.pending}
+🚫 Skipped: ${summary.skipped}
+🔢 Total Tests: ${summary.tests}
 `;
+console.log(message);
 
 fs.writeFileSync("slack-message.txt", message.trim());
 console.log("Slack message generated.");

@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 import ShopPage from "../support/shop"
 
-
+describe('Place Order',()=>{
 beforeEach(()=>{
 
     cy.fixture('users').then(function(data){
@@ -11,7 +11,6 @@ beforeEach(()=>{
 
   })
   const shoppage= new ShopPage
-
   it("Place an Order", function(){
     shoppage.loginWithJwt()
     shoppage.addToCart()
@@ -21,3 +20,4 @@ beforeEach(()=>{
     shoppage.clickOnPlaceOrder()
     
   })
+})
