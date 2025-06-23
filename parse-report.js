@@ -2,17 +2,18 @@ const fs = require("fs");
 const path = require("path");
 
 // const resultsDir = "cypress/results";
-const files = fs.readdirSync(resultsDir);
-console.log({files});
+// const files = fs.readdirSync(resultsDir);
+// console.log({files});
 
-const resultFile = files.find(file => /^result.json$/.test(file));
+// const resultFile = files.find(file => /^result.json$/.test(file));
 // console.log({resultFile});
 
 if (!resultFile) {
     console.error("❌ No result file found.");
     process.exit(1);
   }
-  const reportPath = path.join(resultFile);
+  const reportPath = "cypress/results/result.json";
+
 const data = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 console.log(data);
 
