@@ -27,5 +27,8 @@ const message = `
 `;
 console.log(message);
 
-fs.writeFileSync("slack-message.txt", message.trim());
-console.log("Slack message generated.");
+const payload = {
+    text: message.trim()
+  };
+fs.writeFileSync("slack-message.txt", JSON.stringify(payload, null, 2));
+console.log("✅ slack-message.txt (JSON) generated.");
