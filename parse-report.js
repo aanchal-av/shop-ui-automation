@@ -3,7 +3,7 @@ const path = require("path");
 
 const resultsDir = "cypress/results";
 const files = fs.readdirSync(resultsDir);
-const resultFile = files.find(file => /^result-.*\.json$/.test(file));
+const resultFile = files.find(file => /^result-*\.json$/.test(file));
 if (!resultFile) {
     console.error("❌ No result-*.json file found.");
     process.exit(1);
