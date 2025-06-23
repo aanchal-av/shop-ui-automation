@@ -1,6 +1,3 @@
-/🧪 *Cypress Test Summary*
-✅ Passed: 3
-❌ Failed: 0
-⏸️ Pending: 0
-🚫 Skipped: 0
-🔢 Total Tests: 3
+{
+  "text": "*Cypress Test Summary*\n Passed: 3\n Failed: 0\n Pending: 0\n Skipped: 0\n Total Tests: 3"
+}
