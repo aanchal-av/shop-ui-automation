@@ -17,7 +17,7 @@ const summary = data?.results?.summary;
 // const stats = data.stats;
 // console.log("Stats found:", stats);
 
-const message = `🧪 *Cypress Test Summary*\n✅ Passed: ${summary.passed}\n❌ Failed: ${summary.failed}\n⏸️ Pending: ${summary.pending}\n🚫 Skipped: ${summary.skipped}\n🔢 Total Tests: ${summary.tests}`;
+const message = `*Cypress Test Summary*\n Passed: ${summary.passed}\n Failed: ${summary.failed}\n Pending: ${summary.pending}\n Skipped: ${summary.skipped}\n Total Tests: ${summary.tests}`;
 console.log(message);
 
 const payload = {
