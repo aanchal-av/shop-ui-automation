@@ -1,12 +1,12 @@
 const { defineConfig } = require("cypress");
 const { GenerateCtrfReport } = require('cypress-ctrf-json-reporter')
 const { execSync } = require("child_process");
-const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+// const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
 
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
   reporterOptions:{ 
-      reportDir: "cypress/results"
+      reportDir: "cypress/results/result.json"
     
   },
 
@@ -25,7 +25,8 @@ module.exports = defineConfig({
       new GenerateCtrfReport({
         on,
         outputDir:"cypress/results",
-        outputFile: `result-${timestamp}.json`
+        // outputFile: `result-${timestamp}.json`
+        outputFile: 'result.json'
       });
 
       on("after:run", (results) => {
