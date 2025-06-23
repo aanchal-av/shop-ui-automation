@@ -11,8 +11,8 @@ const path = require("path");
 
   const reportPath = "cypress/results/result.json";
   
-  if (!fs.existsSync(reportPath)) {
-    console.error("❌ No result.json file found.");
+  if (!fs.existsSync(reportPath) || !fs.statSync(reportPath).isFile()) {
+    console.error("❌ result.json does not exist or is not a file.");
     process.exit(1);
   }
 
