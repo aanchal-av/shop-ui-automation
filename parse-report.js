@@ -3,7 +3,11 @@ const path = require("path");
 
 const resultsDir = "cypress/results";
 const files = fs.readdirSync(resultsDir);
+console.log({files});
+
 const resultFile = files.find(file => /^result-*\.json$/.test(file));
+console.log({resultFile});
+
 if (!resultFile) {
     console.error("❌ No result file found.");
     process.exit(1);
@@ -13,9 +17,6 @@ const data = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 console.log(data);
 
 const summary = data?.results?.summary;
-
-// const stats = data.stats;
-// console.log("Stats found:", stats);
 
 const message = `*Cypress Test Summary*\n ✅Passed: ${summary.passed}\n ❌Failed: ${summary.failed}\n ⏸️Pending: ${summary.pending}\n 🚫Skipped: ${summary.skipped}\n 🔢Total Tests: ${summary.tests}`;
 console.log(message);
