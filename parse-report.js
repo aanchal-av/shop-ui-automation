@@ -8,11 +8,13 @@ const path = require("path");
 // const resultFile = files.find(file => /^result.json$/.test(file));
 // console.log({resultFile});
 
-if (!resultFile) {
-    console.error("❌ No result file found.");
+
+  const reportPath = "cypress/results/result.json";
+  
+  if (!fs.existsSync(reportPath)) {
+    console.error("❌ No result.json file found.");
     process.exit(1);
   }
-  const reportPath = "cypress/results/result.json";
 
 const data = JSON.parse(fs.readFileSync(reportPath, "utf8"));
 console.log(data);
