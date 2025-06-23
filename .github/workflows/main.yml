@@ -21,10 +21,7 @@ jobs:
 
       - name: Run Cypress Tests
         run: yarn test
-
-      - name: Parse test report and generate Slack message
-        run: node parse-report.js
-
+        
       - name: Show Slack message content
         run: cat slack-message.txt
         
