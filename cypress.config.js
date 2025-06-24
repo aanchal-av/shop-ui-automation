@@ -6,7 +6,7 @@ const { execSync } = require("child_process");
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
   reporterOptions:{ 
-      reportDir: "cypress/results/result.json"
+      reportDir: "cypress/results/"
     
   },
 
@@ -25,19 +25,20 @@ module.exports = defineConfig({
       new GenerateCtrfReport({
         on,
         outputDir:"cypress/results",
-        // outputFile: `result-${timestamp}.json`
         outputFile: 'result.json'
+
+        // outputFile: `result-${timestamp}.json`
       });
 
-      on("after:run", (results) => {
-        console.log("✅ Cypress run complete. Generating Slack report...",results);
+      // on("after:run", (results) => {
+      //   console.log("✅ Cypress run complete. Generating Slack report...",results);
 
-        try {
-          execSync("node parse-report.js", { stdio: "inherit" });
-        } catch (err) {
-          console.error("❌ Failed to run parse-report.js:", err.message);
-        }
-      });
+      //   try {
+      //     execSync("node parse-report.js", { stdio: "inherit" });
+      //   } catch (err) {
+      //     console.error("❌ Failed to run parse-report.js:", err.message);
+      //   }
+      // });
     },
   },
 });

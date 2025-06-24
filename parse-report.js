@@ -9,14 +9,14 @@ const path = require("path");
 // console.log({resultFile});
 
 
-  const reportPath = "cypress/results/result.json";
+  const reportFile = "cypress/results/result.json";
   
-  if (!fs.existsSync(reportPath) || !fs.statSync(reportPath).isFile()) {
-    console.error("❌ result.json does not exist or is not a file.");
-    process.exit(1);
-  }
+//   if (!fs.existsSync(reportPath) || !fs.statSync(reportPath).isFile()) {
+//     console.error("❌ result.json does not exist or is not a file.");
+//     process.exit(1);
+//   }
 
-const data = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+const data = JSON.parse(fs.readFileSync(reportFile, "utf8"));
 console.log(data);
 
 const summary = data?.results?.summary;
